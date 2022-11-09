@@ -1,17 +1,16 @@
-<form method="post">
-  {% csrf_token %}
+<form method="post" enctype="multipart/form-data">
   <div class="mb-3">
     <label for="typeKey" class="form-label">Key type</label>
-    <select id="typeKey" class="form-select">
+    <select id="typeKey" name="typeKey" class="form-select">
       <option value="" selected disabled>Select type</option>
-      <option value="">Public</option>
-      <option value="">Private</option>
+      <option value="public">Public</option>
+      <option value="private">Private</option>
     </select>
   </div>
 
   <div class="mb-3">
-    <label for="formFile" class="form-label">PEM file</label>
-    <input class="form-control" type="file" id="formFile">
+    <label for="file" class="form-label">PEM file</label>
+    <input class="form-control" type="file" name="file" id="formFile" accept=".txt">
   </div>
 
   <button type="submit" class="btn btn-primary">Submit Query</button>
