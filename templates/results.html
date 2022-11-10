@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h4 class="mt-4 mb-4">Resultados</h4>
+
+<div id="results">
+  <p><b>Tipo de llave</b>: {{type_key}}</p>
+
+  <ul class="list-group list-group-numbered">
+
+    {% for key,value in details_dic.items() %}
+
+      <li class="list-group-item d-flex justify-content-between align-items-start ">
+        <div class="ms-2 me-auto">
+          <div class="fw-bold"> {{key}}: </div>
+          <div class="form-floating">
+            <textarea class="form-control p-2" id="floatingTextarea" cols="112" style="height: 90px;" disabled>{{value}}</textarea>
+          </div>
+        </div>
+      </li>
+    {% endfor%}
+  </ul>
+</div>
+{% endblock content %}
