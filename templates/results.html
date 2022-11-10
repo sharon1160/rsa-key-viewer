@@ -1,7 +1,14 @@
 {% extends "base.html" %}
 
 {% block content %}
-<h4 class="mt-4 mb-4">Resultados</h4>
+<div class="d-flex mb-3">
+  <div class="me-auto p-2 ps-0">
+    <h4 class="mt-4 mb-4">Resultados</h4>
+  </div>
+  <div class="ms-auto p-2">
+    <a class="btn btn-primary my-4 float-right" href="{{ url_for('index') }}" role="button">Regresar</a>
+  </div>
+</div>
 
 <div id="results">
   <p><b>Tipo de llave</b>: {{type_key}}</p>
@@ -20,5 +27,6 @@
       </li>
     {% endfor%}
   </ul>
+
 </div>
 {% endblock content %}
